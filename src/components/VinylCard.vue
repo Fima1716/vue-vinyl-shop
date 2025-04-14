@@ -1,14 +1,24 @@
 <script setup>
+import { ref } from 'vue'
+let isAdded = ref(false)
+let isLiked = ref(false)
+
+function onClickAdd() {
+  isAdded.value = !isAdded.value
+}
+function onLikeAdd() {
+  isLiked.value = !isLiked.value
+}
 defineProps({
   imageUrl: String,
   albumName: String,
   releaseDate: Number,
   condition: String,
   vinylPrice: Number,
-  isLiked: Boolean,
+  /*   isLiked: Boolean,
   isAdded: Boolean,
   onClickAdd: Function,
-  onClickLike: Function,
+  onClickLike: Function, */
 })
 </script>
 
@@ -17,7 +27,7 @@ defineProps({
     class="relative m-10 border border-slate-300 rounded-3xl p-8 cursor-pointer hover:-translate-y-2 hover:shadow-xl transition"
   >
     <img
-      @click="onClickLike"
+      @click="onLikeAdd"
       class="absolute top-10 left-10"
       :src="!isLiked ? '/like-1.svg' : '/like-2.svg'"
       alt="Unclicked like button"

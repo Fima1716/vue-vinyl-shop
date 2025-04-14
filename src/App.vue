@@ -2,14 +2,46 @@
 import VinylHeader from './components/VinylHeader.vue'
 import VinylList from './components/VinylList.vue'
 import VinylDrawer from './components/VinylDrawer.vue'
-import { ref } from 'vue'
+import { onUnmounted, onMounted, provide, ref } from 'vue'
 const isDrawerOpen = ref(false)
+
+const fetchVinylData = ref([])
+
+const closeDrawer = () => {
+  isDrawerOpen.value = false
+}
+const openDrawer = () => {
+  isDrawerOpen.value = true
+}
+onMounted(async () => {
+  try {
+    const res = await fetch('https://18d85f8cd41400df.mokky.dev/vinyl')
+    const data = await res.json()
+    console.log(data)
+    fetchVinylData.value = data
+  } catch (error) {
+    console.error('Ошибка при загрузке данных:', error)
+  }
+
+  window.addEventListener('keydown', handleKeydown)
+})
+
+const handleKeydown = (e) => {
+  if (e.key === 'Escape') {
+    closeDrawer()
+  }
+}
+
+onUnmounted(() => {
+  window.removeEventListener('keydown', handleKeydown)
+})
+provide('cartActions', { closeDrawer, openDrawer })
 </script>
 
 <template>
-  <VinylDrawer :is-open="isDrawerOpen" @close="isDrawerOpen = false" />
+  <VinylDrawer v-if="isDrawerOpen" />
   <div class="bg-white w-4/5 m-auto rounded-xl shadow-xl mt-12">
-    <VinylHeader />
+    <VinylHeader @open-drawer="openDrawer" />
     <div class="flex justify-between items-center mr-20">
       <h2 class="text-3xl font-bold mb-8 mt-8 ml-12">Каталог пластинок</h2>
 
@@ -29,6 +61,6 @@ const isDrawerOpen = ref(false)
         </div>
       </div>
     </div>
-    <VinylList />
+    <VinylList :items="fetchVinylData" />
   </div>
 </template>
