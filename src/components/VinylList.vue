@@ -24,15 +24,5 @@ function onLikeAdd() {
       :onClickAdd="onClickAdd"
       :onClickLike="onLikeAdd"
     />
-    <VinylCard
-      image-url="/vinyl/vinyl2.jpg"
-      album-name="Various, Andrew Lloyd Webber & Tim Rice* – Jesus Christ Superstar"
-      release-date="1970"
-      condition="M/M"
-      vinyl-price="2000"
-    />
-    <VinylCard />
-    <VinylCard />
-    <VinylCard />
   </div>
 </template>
