@@ -1,35 +1,29 @@
-# vue-get-started
-
-This template should help get you started developing with Vue 3 in Vite.
-
-## Recommended IDE Setup
-
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur).
-
-## Customize configuration
-
-See [Vite Configuration Reference](https://vite.dev/config/).
-
-## Project Setup
-
-```sh
-npm install
-```
-
-### Compile and Hot-Reload for Development
-
-```sh
-npm run dev
-```
-
-### Compile and Minify for Production
-
-```sh
-npm run build
-```
-
-### Lint with [ESLint](https://eslint.org/)
-
-```sh
-npm run lint
-```
+# Проект для изучения Vue 3. Приложение — интернет-магазин виниловых пластинок. Функционал: каталог товаров и оформление заказа
+ # Проект для изучения Vue 3. 
+ Приложение — интернет-магазин виниловых пластинок. Функционал: каталог товаров и оформление заказа
+ 
+ 
+ Изучаю по: https://vuejs.org/guide/
+ 
+ Проект задеплоен, его можно посмотреть тут: https://vue-vinyl-shop.vercel.app/
+ 
+ 
+ Сейчас находится  на стадии вёрстки и первичного знакомства с синтаксисом Vue — компоненты, реактивность, директивы.
+ 
+ ## Рекомендуемая среда разработки
+ 
+ [VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (нужно выключить Vetur).
+ 
+ Настройка конфигурации: https://vite.dev/config/
+ 
+ ## Установка проекта
+ 
+ ```sh
+ npm install
+ ```
+ 
+ ### Запуск проекта
+ 
+ ```sh
+ npm run dev
+ ```
