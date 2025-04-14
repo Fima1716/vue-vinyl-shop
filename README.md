@@ -1,12 +1,14 @@
 # Проект для изучения Vue
-Основной ресурс: https://vuejs.org/guide/introduction.html
+Изучаю по: https://vuejs.org/guide/
 
-Проект задеплоен: https://vue-vinyl-shop.vercel.app/
+Проект задеплоен, его можно посмотреть тут: https://vue-vinyl-shop.vercel.app/
 
 
 ## Рекомендуемая среда разработки
 
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (нужно выключить).
+[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (нужно выключить Vetur).
+
+Настройка конфигурации: https://vite.dev/config/
 
 ## Установка проекта
 
