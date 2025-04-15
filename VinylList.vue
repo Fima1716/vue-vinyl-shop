@@ -1,23 +1,22 @@
 <script lang="ts">
 import VinylCard from "./VinylCard.vue";
 import { defineComponent } from "vue";
-import type { PropType } from "vue";
 
-interface VinylItem {
+/* interface VinylItem {
   id: number;
   name: string;
   price: number;
   condition: string;
   year: number;
   imageUrl: string;
-}
+} */
 
 export default defineComponent({
   name: "VinylList",
   components: { VinylCard },
   props: {
     items: {
-      type: Array as PropType<VinylItem[]>,
+      type: Array,
       required: true,
     },
   },
