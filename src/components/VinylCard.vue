@@ -1,25 +1,39 @@
-<script setup>
-import { ref } from 'vue'
-let isAdded = ref(false)
-let isLiked = ref(false)
+<script lang="ts">
+import { defineComponent, ref } from "vue";
 
-function onClickAdd() {
-  isAdded.value = !isAdded.value
-}
-function onLikeAdd() {
-  isLiked.value = !isLiked.value
-}
-defineProps({
-  imageUrl: String,
-  albumName: String,
-  releaseDate: Number,
-  condition: String,
-  vinylPrice: Number,
-  /*   isLiked: Boolean,
-  isAdded: Boolean,
-  onClickAdd: Function,
-  onClickLike: Function, */
-})
+export default defineComponent({
+  name: "VinylCard",
+  props: {
+    imageUrl: { type: String, required: true },
+    albumName: { type: String, required: true },
+    releaseDate: { type: Number, required: true },
+    condition: { type: String, required: true },
+    vinylPrice: { type: Number, required: true },
+  },
+  setup(props) {
+    const isAdded = ref(false);
+    const isLiked = ref(false);
+
+    const onClickAdd = () => {
+      isAdded.value = !isAdded.value;
+    };
+    const onLikeAdd = () => {
+      isLiked.value = !isLiked.value;
+    };
+
+    return {
+      imageUrl: props.imageUrl,
+      albumName: props.albumName,
+      releaseDate: props.releaseDate,
+      condition: props.condition,
+      vinylPrice: props.vinylPrice,
+      isAdded,
+      isLiked,
+      onClickAdd,
+      onLikeAdd,
+    };
+  },
+});
 </script>
 
 <template>
@@ -47,7 +61,11 @@ defineProps({
         <span><b>Цена:</b></span>
         <span class="text-slate-400">{{ vinylPrice }} ₽</span>
       </div>
-      <img @click="onClickAdd" :src="!isAdded ? '/plus.svg' : '/checked.svg'" alt="Add" />
+      <img
+        @click="onClickAdd"
+        :src="!isAdded ? '/plus.svg' : '/checked.svg'"
+        alt="Add"
+      />
     </div>
   </div>
 </template>

@@ -1,3 +1,11 @@
+<script lang="ts">
+import { defineComponent } from "vue";
+
+export default defineComponent({
+  name: "VinylCartItem",
+});
+</script>
+
 <template>
   <div class="relative flex border gap-5 rounded-xl border-slate-200 mt-5 p-5">
     <img class="w-25 m-auto" src="/vinyl/vinyl1.jpg" alt="" />

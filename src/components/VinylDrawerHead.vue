@@ -1,12 +1,22 @@
-<script setup>
-import { inject } from 'vue'
-const { closeDrawer } = inject('cartActions')
+<script lang="ts">
+import { defineComponent, inject } from "vue";
+
+export default defineComponent({
+  name: "VinylDrawerHead",
+  setup() {
+    const cartActions = inject<{ closeDrawer: () => void }>("cartActions");
+
+    return {
+      cartActions,
+    };
+  },
+});
 </script>
 
 <template>
   <div class="flex items-center gap-5">
     <svg
-      @click="closeDrawer"
+      @click="cartActions?.closeDrawer"
       class="rotate-180 hover:-translate-x-1 opacity-30 hover:opacity-100 transition cursor-pointer"
       width="16"
       height="14"
@@ -29,6 +39,8 @@ const { closeDrawer } = inject('cartActions')
         stroke-linejoin="round"
       />
     </svg>
-    <h2 class="text-xl font-bold">Корзина</h2>
+    <h2 class="text-xl font-bold">
+      Корзина: <code>development in process</code>
+    </h2>
   </div>
 </template>

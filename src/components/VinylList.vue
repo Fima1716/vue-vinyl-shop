@@ -1,10 +1,26 @@
-<script setup>
-import VinylCard from './VinylCard.vue'
-/* import { ref } from 'vue' */
+<script lang="ts">
+import { defineComponent, PropType } from "vue";
+import VinylCard from "./VinylCard.vue";
 
-defineProps({
-  items: Array,
-})
+interface VinylItem {
+  id: number;
+  name: string;
+  price: number;
+  condition: string;
+  year: number;
+  imageUrl: string;
+}
+
+export default defineComponent({
+  name: "VinylList",
+  components: { VinylCard },
+  props: {
+    items: {
+      type: Array as PropType<VinylItem[]>,
+      required: true,
+    },
+  },
+});
 </script>
 
 <template>
@@ -17,10 +33,6 @@ defineProps({
       :release-date="item.year"
       :condition="item.condition"
       :vinyl-price="item.price"
-      :is-added="isAdded"
-      :is-liked="isLiked"
-      :onClickAdd="onClickAdd"
-      :onClickLike="onLikeAdd"
     />
   </div>
 </template>
