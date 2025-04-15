@@ -6,7 +6,6 @@
 
  Теорию изучал по: https://vuejs.org/guide/ и https://www.youtube.com/watch?v=U_-Ht_v-oAs&t=543s
  
- Проект задеплоен, его можно посмотреть тут: https://vue-vinyl-shop.vercel.app/
  
  
 Учебный проект на данной стадии завершён. Обновление не планируется.
